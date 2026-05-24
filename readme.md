@@ -21,6 +21,6 @@ The net tries for fish 5 times (by default) a second. Every try, if its on coold
 
 Every following try has a 0.1% chance to catch a fish. If the net has bait, the chance is 0.5%. After 200 tries the net hits hard pity and catches a fish anyway.
 
-After catching a fish, goes back on cooldown and resets pity. Consumes 1-3 with increasingly rarer chances to consume less. Sets the cooldown to 200 tries. If the net has bait, sets cooldown to 50 tries.
+After catching a fish, goes back on cooldown and resets pity. Consumes 1-3 bait with increasingly rarer chances to consume less. Sets the cooldown to 200 tries. If the net has bait, sets cooldown to 50 tries.
 
 > Configuration of these numbers is planned but not yet implemented. Adjust tick rate with ArbiterLib
