@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "x": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#fishes"
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "recipes": ["autofisher:net"]
+    }
+}

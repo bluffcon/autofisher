@@ -1,0 +1,1 @@
+execute if entity @s[tag=autofisher.block.net] run return run function autofisher:block/net/tick

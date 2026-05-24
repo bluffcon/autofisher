@@ -1,0 +1,2 @@
+execute on attacker if items entity @s weapon.mainhand seagrass as @n run function autofisher:buttons/interact_net/select/feed/as_int
+execute on attacker if items entity @s weapon.mainhand seagrass run function autofisher:buttons/interact_net/select/feed/feeding

@@ -1,0 +1,50 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "sSs",
+        "SAS",
+        "sSs"
+    ],
+    "key": {
+        "s": "stick",
+        "S": "string",
+        "A": "seagrass"
+    },
+    "show_notification": true,
+    "result": {
+        "id": "wither_spawn_egg",
+        "components": {
+                        "entity_data": {"id": "item_display",
+                            "Tags": ["arbiterlib.block","arbiterlib.block.adjustable_light"],
+                            "data": 
+                                {"arbiterlib":
+                                    {"block":
+                                        {"namespace": "autofisher",
+                                            "function": "autofisher:block/net/spawn",
+                                            "drop_loottable": "autofisher:crafts/net",
+                                            "id": "net"
+                                        }
+                                    }
+                                },
+                        "item": {"id": "crafting_table","components": {"item_model": "arbiterlib:autofisher_net"}},
+                        "brightness": {
+                            "block": 15, "sky": 0
+                        },
+                        "transformation": {"left_rotation": [0.0, 0.0, 0.0, 1.0], "right_rotation": [0.0, 0.0, 0.0, 1.0], "scale": [1.001, 1.001, 1.001], "translation": [0.0, 0.5, 0.0]},
+                        "Rotation": [0,0],
+                        "glow_color_override": 1
+                        },
+                    "item_model": "arbiterlib:autofisher_net",
+                    "item_name": {"translate": "block.autofisher.net"},
+                    "custom_data": {
+                        "arbiterlib": {"namespace":"autofisher","id":"net"}
+                    },
+                    "lore": [
+                        {"translate":"block.autofisher.net.description", "color": "gray", "italic": false},
+                        {"translate":"id.autofisher.short", "color": "blue", "italic": false}
+                    ]
+        },
+        "count": 1
+    },
+    "category": "equipment"
+}

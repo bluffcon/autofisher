@@ -1,0 +1,1 @@
+$data modify entity @n[distance=..9,type=text_display,tag=arbiterlib.button.type.2at,tag=autofisher.button.net] text set value [{translate:"ui.autofisher.net.add_bait"}, {translate:"ui.autofisher.net.add_bait.1"}, {text:"$(autofisher_bait_score)"}, {translate:"ui.autofisher.net.add_bait.2"}]
