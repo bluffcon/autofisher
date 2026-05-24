@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": [{"sprite": "item/cod", "atlas": "items"}, " ", {"text":"Autofisher Net", "color":"#c2b792","underlined": true}, {"text":": ", "color":"#d7dbdd","underlined": false}, {"text":"Catch for me! ", "color":"#5ebef5","underlined": false},{"text":"|","color":"#57575c","underlined": false},{"text":" by bluffcon + ArbiterLib", "color":"#cdcdd1","underlined": false}],
+        "description": [{"sprite": "item/cod", "atlas": "items"}, " ", {"text":"Autofisher", "color":"#c2b792","underlined": true}, {"text":": ", "color":"#d7dbdd","underlined": false}, {"text":"Catch for me!", "color":"#5ebef5","underlined": false}, {"text":" r2","color": "#57575c"}, {"text":" | ","color":"#57575c","underlined": false},{"text":" by bluffcon + ArbiterLib", "color":"#cdcdd1","underlined": false}],
         "min_format": [101,1],
         "max_format": [101,1]
     }
