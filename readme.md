@@ -7,7 +7,7 @@ Adds a block that lets you catch fish while you're away! The Autofisher Net auto
 ## Crafting
 You need to craft the autofisher net using **sticks**, **string**, and **seagrass** in the crafting table.
 
-![![crafting recipe](https://github.com/bluffcon/autofisher/blob/master/crafting.png?raw=true)]
+![crafting recipe](https://github.com/bluffcon/autofisher/blob/master/crafting.png?raw=true)
 
 
 ## Usage
@@ -17,10 +17,10 @@ You can add bait (open menu -> seagrass) to the net, this will make fish appear 
 
 
 ## Technical
-The net tries for fish 5 times (by default) a second. Every try, if its on cooldown, has a 55% chance to remove 1 cooldown. If cooldown is less than 0, makes a reeling-in sound and starts trying for fish.
+The net tries for fish 5 times (by default) a second. Every try, if its on cooldown, has a 25% chance to remove 1 cooldown. If cooldown is less than 0, makes a reeling-in sound and starts trying for fish.
 
-Every following try has a 0.1% chance to catch a fish. If the net has bait, the chance is 0.5%. After 200 tries the net hits hard pity and catches a fish anyway.
+Every following try has a 0.01% chance to catch a fish. If the net has bait, the chance is 0.05%. After 500 tries the net hits hard pity and catches a fish anyway.
 
-After catching a fish, goes back on cooldown and resets pity. Consumes 1-3 bait with increasingly rarer chances to consume less. Sets the cooldown to 200 tries. If the net has bait, sets cooldown to 50 tries.
+After catching a fish, goes back on cooldown and resets pity. Consumes 1-3 bait with increasingly rarer chances to consume less. Sets the cooldown to 200 tries.
 
 > Configuration of these numbers is planned but not yet implemented. Adjust tick rate with ArbiterLib
