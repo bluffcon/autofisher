@@ -1,0 +1,34 @@
+{
+    "criteria": {
+        "y": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "1"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "x": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {"translate": "advancements.autofisher.skystone_and_pillar"},
+        "description": [{"translate": "advancements.autofisher.skystone_and_pillar.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
+        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher_skin_pack_space"}},
+        "show_toast": true,
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "autofisher:alternative_story/codbait",
+    "rewards": {
+        "experience": 5
+    }
+}

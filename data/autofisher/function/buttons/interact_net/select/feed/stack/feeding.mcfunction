@@ -1,4 +1,4 @@
-item modify entity @s weapon.mainhand {function: "set_count", count:-1, add: true}
+$item modify entity @s weapon.mainhand {function: "set_count", count:-$(bait_stack_size), add: true}
 
 
 execute if predicate {condition:"random_chance", chance: 0.5} run return run playsound entity.player.burp block @s ~ ~ ~ 0.7 1.2

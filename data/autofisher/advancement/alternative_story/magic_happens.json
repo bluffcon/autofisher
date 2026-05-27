@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "x": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {"translate": "advancements.autofisher.magic_happens"},
+        "description": [{"translate": "advancements.autofisher.magic_happens.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
+        "icon": {"id": "apple", "components": {"item_model": "minecraft:enchanted_book", "enchantment_glint_override": true}},
+        "show_toast": true,
+        "announce_to_chat": true,
+        "frame": "goal"
+    },
+    "parent": "autofisher:alternative_story/caught_in_the_nets",
+    "rewards": {
+        "experience": 15
+    }
+}

@@ -1,0 +1,1 @@
+$data modify entity @s item.components."minecraft:item_model" set value "arbiterlib:autofisher_net_skin_$(skin)"

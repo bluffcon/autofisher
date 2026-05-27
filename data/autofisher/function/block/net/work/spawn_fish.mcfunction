@@ -1,15 +1,18 @@
 playsound entity.item.pickup block @a ~ ~ ~ 0.7 0.45
-playsound entity.fishing_bobber.splash block @a ~ ~ ~ 0.2 1.2
+playsound arbiterlib:sfx.autofisher.water_splash block @a ~ ~ ~ 0.2 1.2
 
 summon item ~ ~ ~ {Motion:[0,-0.4,0],Tags:["autofisher.fish"],Item:{id:knowledge_book}}
 team join autofisher.fishing @n[type=item,tag=autofisher.fish,distance=..2]
-loot replace entity @n[type=item,distance=..2] container.0 fish gameplay/fishing ~ ~ ~ fishing_rod
+function autofisher:block/net/work/make_fish
+execute if entity @s[tag=autofisher.block.net.dragon_breath] run function autofisher:block/net/skin/spawn_dragon_fish
+execute if items entity @n[type=item,tag=autofisher.fish] container.* enchanted_book as @a if score @s arbiterlib.player = @n[distance=..2,type=item_display,tag=autofisher.block.net] autofisher.net.owner_id run advancement grant @s only autofisher:alternative_story/magic_happens
 tag @n[type=item,tag=autofisher.fish,distance=..2] remove autofisher.fish
 
 scoreboard players set @s autofisher.net.cooldown 200
 scoreboard players set @s autofisher.net.pity 0
+execute if score @s autofisher.net.skin matches 1 if predicate {condition:random_chance,chance:0.01} run summon phantom ~ ~1 ~ {Motion:[0,1,0]}
 
-execute unless score @s autofisher.net.bait matches 3.. run return run scoreboard players add @s autofisher.net.bait 0
+execute if score @s autofisher.net.skin matches 2 run return run scoreboard players remove @s autofisher.net.bait 3
 execute if predicate {condition:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 3
 execute if predicate {condition:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 2
 scoreboard players remove @s autofisher.net.bait 1

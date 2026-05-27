@@ -1,0 +1,30 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "sss",
+        "sds",
+        "sss"
+    ],
+    "key": {
+        "s": "paper",
+        "d": "glow_ink_sac"
+    },
+    "show_notification": true,
+    "result": {
+        "id": "poisonous_potato",
+        "components": {
+                    "!food": {}, "!consumable": {},
+                    "item_model": "arbiterlib:autofisher_skin_pack_empty",
+                    "item_name": {"translate": "item.autofisher.skin_pack.empty"},
+                    "custom_data": {
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "0"}
+                    },
+                    "lore": [
+                        {"translate":"item.autofisher.skin_pack.empty.description", "color": "gray", "italic": false},
+                        {"translate":"id.autofisher.short", "color": "blue", "italic": false}
+                    ]
+        },
+        "count": 1
+    },
+    "category": "equipment"
+}

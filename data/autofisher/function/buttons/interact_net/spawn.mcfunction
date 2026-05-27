@@ -1,5 +1,6 @@
 function arbiterlib:button/messages/explanation
 
+playsound block.resin.place ui @a ~ ~ ~ 1 1.2
 execute align xyz run particle poof ~0.5 ~1.65 ~0.5 0.2 0.2 0.2 0.01 20
 
 execute align xyz run summon text_display ~0.5 ~1.65 ~0.5 {text:"???", \
@@ -57,5 +58,7 @@ summon item_display ~ ~1.25 ~ { \
     brightness:{block:0,sky:0}, teleport_duration:10 \
 }
 
+data modify entity @n[type=item_display,distance=..5,tag=arbiterlib.button.type.2at.2] item.id set from storage autofisher:data autofisher_bait_item_id
+data modify entity @n[type=item_display,distance=..5,tag=arbiterlib.button.type.2at.2] item.components set from storage autofisher:data autofisher_bait_item_display_components
 
 function arbiterlib:button/ticks/main

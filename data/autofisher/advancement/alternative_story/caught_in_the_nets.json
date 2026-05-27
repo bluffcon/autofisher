@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "x": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "predicates": {
+                            "custom_data": {
+                                "arbiterlib": {
+                                    "namespace": "autofisher",
+                                    "id": "net"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "display": {
+        "title": {"translate": "advancements.autofisher.caught_in_the_nets"},
+        "description": [{"translate": "advancements.autofisher.caught_in_the_nets.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
+        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher_net"}},
+        "show_toast": true,
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "arbiterlib:alternative_story/root",
+    "rewards": {
+        "experience": 5
+    }
+}
