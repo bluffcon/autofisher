@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:wither_spawn_egg",
+          "name": "minecraft:cod_spawn_egg",
           "functions": [
             {"function": "set_components",
                 "components": {
