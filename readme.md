@@ -7,13 +7,13 @@ Adds a block that lets you catch fish while you're away! The Fishing Net automat
 # Features
 Autofisher is a really great datapack that allows for automatization of fishing in vanilla! It is inspired a lot by modded fishing nets from mods such as Cyclic that allow for a really good endless food supply that can last the whole game. Autofisher is my own take on this, adding a bit more than just a fishing block!
 
-- Food and Treasure supply
+- Food and Treasure supply 🍽️
 > Most of the loot you will be getting with Autofisher's Fishing Nets will be fish and treasure. The beautiful part of it is the scalability of this - the net is a block, which means it can be placed endlessly, allowing for an endless supply of fish!
 
-- New use for the old things
+- New use for the old things 💖
 > The datapack interacts and uses some old and underused items from the game for its feature pivots! For example, have you ever had to grow seagrass on purpose to get baits for a fishing net? What about getting Dragon's Breath for a phantom farm? Autofisher offers relevant items such as books that come with the cost of making use of the game's other additions.
 
-- Modern with a menu
+- Modern with a menu 🎨
 > Every net can be interacted with in an informative way with an in-world GUI. By right-clicking a net you can bring up its menu where you can add bait to it or destroy it using interactive buttons!
 
 
@@ -70,4 +70,4 @@ Every following try has a 0.45% chance to catch a fish. If the net has bait, the
 
 After catching a fish, makes a splashing sound and goes back on cooldown and resets pity. Consumes 1-3 bait with increasingly rarer chances to consume less. Sets the cooldown to 200 tries.
 
-**Changelog r3:** Configuration for some of these numbers has been added! You can now change the bait item, bait consumption, bait stack size, bait button item, etc.! View all possible up-to-date configurations in `autofisher:restore_defaults.mcfunction`
+**Changelog b3:** Configuration for some of these numbers has been added! You can now change the bait item, bait consumption, bait stack size, bait button item, etc.! View all possible up-to-date configurations in `autofisher:restore_defaults.mcfunction`
