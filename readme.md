@@ -1,4 +1,4 @@
-# Autofisher [b3]
+# Autofisher [r4]
 Adds a block that lets you catch fish while you're away! The Fishing Net automatically gets fish at random intervals and puts it into a hopper, a water stream, or on the ground below!
 
 ### ⚠️ Requires ArbiterLib (`a4` and higher) **datapack** and **resources**. Get them on [Modrinth](https://modrinth.com/datapack/arbiterlib) | [GitHub](github.com/bluffcon/arbiterlib)
