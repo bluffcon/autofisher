@@ -11,13 +11,13 @@
             {"function": "set_components",
                 "components": {
                     "!food": {}, "!consumable": {},
-                    "item_model": "arbiterlib:autofisher_skin_pack_space",
-                    "item_name": {"translate": "item.autofisher.skin_pack.space"},
+                    "item_model": "arbiterlib:autofisher/net/pack_pride",
+                    "item_name": {"translate": "item.autofisher.skin_pack.pride"},
                     "custom_data": {
-                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "1"}
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "101"}
                     },
                     "lore": [
-                        {"translate":"item.autofisher.skin_pack.space.description", "color": "gray", "italic": false},
+                        {"translate":"item.autofisher.skin_pack.pride.description", "color": "gray", "italic": false},
                         {"translate":"id.autofisher.short", "color": "blue", "italic": false}
                     ]
                 }

@@ -1,6 +1,6 @@
 {
     "criteria": {
-        "y": {
+        "x": {
             "trigger": "inventory_changed",
             "conditions": {
                 "items": [
@@ -8,26 +8,26 @@
                         "components": {
                             "custom_data": {
                                 "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
-                                "autofisher": {"skin": "1"}
+                                "autofisher": {"skin": "4"}
                             }
                         }
                     }
                 ]
             }
         },
-        "x": {
+        "y": {
             "trigger": "impossible"
         }
     },
     "display": {
-        "title": {"translate": "advancements.autofisher.skystone_and_pillar"},
-        "description": [{"translate": "advancements.autofisher.skystone_and_pillar.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
-        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher/net/pack_space"}},
+        "title": {"translate": "advancements.autofisher.trashahedron"},
+        "description": [{"translate": "advancements.autofisher.trashahedron.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
+        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher/net/pack_junkie"}},
         "show_toast": true,
         "announce_to_chat": true,
         "frame": "task"
     },
-    "parent": "autofisher:alternative_story/codbait",
+    "parent": "autofisher:alternative_story/caught_in_the_nets",
     "rewards": {
         "experience": 5
     }

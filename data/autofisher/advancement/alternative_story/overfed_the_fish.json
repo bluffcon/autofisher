@@ -7,7 +7,7 @@
     "display": {
         "title": {"translate": "advancements.autofisher.overfed_the_fish"},
         "description": [{"translate": "advancements.autofisher.overfed_the_fish.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
-        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher_skin_pack_seagrass"}},
+        "icon": {"id": "apple", "components": {"item_model": "arbiterlib:autofisher/net/pack_seagrass"}},
         "show_toast": true,
         "announce_to_chat": true,
         "frame": "task"
@@ -15,7 +15,7 @@
     "parent": "autofisher:alternative_story/codbait",
     "rewards": {
         "loot": [
-            "autofisher:crafts/net_skin_pack_seagrass"
+            "autofisher:crafts/net_skin_packs/seagrass"
         ],
         "experience": 10
     }

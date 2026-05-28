@@ -11,3 +11,4 @@ execute if score @s autofisher.net.pity matches 1000 run return run function aut
 
 execute unless score @s autofisher.net.bait matches 3.. if predicate {condition:"random_chance",chance:0.0045} run function autofisher:block/net/work/spawn_fish
 execute if score @s autofisher.net.bait matches 3.. if predicate {condition:"random_chance",chance:0.05} run function autofisher:block/net/work/spawn_fish
+

@@ -26,7 +26,7 @@
                                         }
                                     }
                                 },
-                        "item": {"id": "crafting_table","components": {"item_model": "arbiterlib:autofisher_net"}},
+                        "item": {"id": "crafting_table","components": {"item_model": "arbiterlib:autofisher/net/skin_0"}},
                         "brightness": {
                             "block": 15, "sky": 0
                         },
@@ -34,7 +34,7 @@
                         "Rotation": [0,0],
                         "glow_color_override": 1
                         },
-                    "item_model": "arbiterlib:autofisher_net",
+                    "item_model": "arbiterlib:autofisher/net/skin_0",
                     "item_name": {"translate": "block.autofisher.net"},
                     "custom_data": {
                         "arbiterlib": {"namespace":"autofisher","id":"net"}

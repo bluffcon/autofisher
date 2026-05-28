@@ -7,6 +7,8 @@ scoreboard objectives add autofisher.net.bait dummy
 scoreboard objectives add autofisher.net.cooldown dummy
 scoreboard objectives add autofisher.net.pity dummy
 scoreboard objectives add autofisher.net.skin dummy
+scoreboard objectives add autofisher.net.junk_count dummy
+scoreboard objectives add autofisher.net.skin.102 dummy
 scoreboard objectives add autofisher.net.owner_id dummy
 
 scoreboard objectives add autofisher.settings dummy
@@ -14,6 +16,7 @@ scoreboard objectives add autofisher.settings dummy
 team add autofisher.fishing
 team modify autofisher.fishing collisionRule pushOtherTeams
 
+execute unless score .fix_old_nets_pre_r5 autofisher.settings matches -1 as @e[type=item_display,tag=autofisher.block.net] run function autofisher:fix_old_nets
 
 execute unless score .custom_settings autofisher.settings matches 1 run function autofisher:restore_defaults
 execute store result storage autofisher:data bait_stack_size int 1 run scoreboard players get .bait_stack_size autofisher.settings

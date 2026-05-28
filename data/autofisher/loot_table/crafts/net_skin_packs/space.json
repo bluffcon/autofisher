@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:poisonous_potato",
+          "functions": [
+            {"function": "set_components",
+                "components": {
+                    "!food": {}, "!consumable": {},
+                    "item_model": "arbiterlib:autofisher/net/pack_space",
+                    "item_name": {"translate": "item.autofisher.skin_pack.space"},
+                    "custom_data": {
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "1"}
+                    },
+                    "lore": [
+                        {"translate":"item.autofisher.skin_pack.space.description", "color": "gray", "italic": false},
+                        {"translate":"id.autofisher.short", "color": "blue", "italic": false}
+                    ]
+                }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

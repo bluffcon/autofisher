@@ -11,13 +11,13 @@
             {"function": "set_components",
                 "components": {
                     "!food": {}, "!consumable": {},
-                    "item_model": "arbiterlib:autofisher_skin_pack_seagrass",
-                    "item_name": {"translate": "item.autofisher.skin_pack.seagrass"},
+                    "item_model": "arbiterlib:autofisher/net/pack_trans",
+                    "item_name": {"translate": "item.autofisher.skin_pack.trans"},
                     "custom_data": {
-                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "2"}
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "102"}
                     },
                     "lore": [
-                        {"translate":"item.autofisher.skin_pack.seagrass.description", "color": "gray", "italic": false},
+                        {"translate":"item.autofisher.skin_pack.trans.description", "color": "gray", "italic": false},
                         {"translate":"id.autofisher.short", "color": "blue", "italic": false}
                     ]
                 }

@@ -14,7 +14,7 @@
         "id": "poisonous_potato",
         "components": {
                     "!food": {}, "!consumable": {},
-                    "item_model": "arbiterlib:autofisher_skin_pack_empty",
+                    "item_model": "arbiterlib:autofisher/net/pack_net",
                     "item_name": {"translate": "item.autofisher.skin_pack.empty"},
                     "custom_data": {
                         "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "0"}

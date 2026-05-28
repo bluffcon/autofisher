@@ -41,6 +41,8 @@ You may obtain different looks for your nets through interacting with the game i
 3. Galaxy
 > When catching fish, has a 1% chance to spawn a phantom. Dark purple frame with black star-riddled netting and a pink inside. Can be obtained repeatedly by following the steps of the "Skystone and Pillar" advancement with a 20% chance.
 
+4. Junkie
+> Catches only trash instead of fish or treasure. Green synthetic nets look like they smell putrid. Can be obtained by having any non-Junkie net catch 30 pieces of junk without being broken once. Still consumes bait.
 
 With more to come!
 

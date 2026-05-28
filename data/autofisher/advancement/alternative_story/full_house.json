@@ -1,0 +1,111 @@
+{
+    "criteria": {
+        "0": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "0"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        "1": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "1"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        "2": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "2"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        "4": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "4"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        "101": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "101"}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        "102": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "custom_data": {
+                                "arbiterlib": {"namespace": "autofisher", "id": "skin_pack"},
+                                "autofisher": {"skin": "102"}
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "display": {
+        "title": {"translate": "advancements.autofisher.full_house"},
+        "description": [{"translate": "advancements.autofisher.full_house.description"}, {"translate": "advancements.arbiterlib.by"}, {"translate": "id.autofisher.short"}],
+        "icon": {"id": "apple", "components": {"item_model": "writable_book", "enchantment_glint_override": true}},
+        "show_toast": true,
+        "announce_to_chat": true,
+        "frame": "challenge"
+    },
+    "parent": "autofisher:alternative_story/skystone_and_pillar",
+    "rewards": {
+        "experience": 150
+    }
+}

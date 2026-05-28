@@ -28,4 +28,4 @@ scoreboard players operation .stack_worth_till_max_bait autofisher.settings = .m
 scoreboard players operation .stack_worth_till_max_bait autofisher.settings -= .seagrass_stack_bait_worth autofisher.settings
 scoreboard players operation .stack_worth_till_max_bait autofisher.settings += .one autofisher.settings
 
-
+scoreboard players set .fix_old_nets_pre_r5 autofisher.settings -1

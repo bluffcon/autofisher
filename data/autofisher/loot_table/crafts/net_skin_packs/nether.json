@@ -11,13 +11,13 @@
             {"function": "set_components",
                 "components": {
                     "!food": {}, "!consumable": {},
-                    "item_model": "arbiterlib:autofisher_skin_pack_empty",
-                    "item_name": {"translate": "item.autofisher.skin_pack.empty"},
+                    "item_model": "arbiterlib:autofisher/net/pack_nether",
+                    "item_name": {"translate": "item.autofisher.skin_pack.nether"},
                     "custom_data": {
-                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "0"}
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "3"}
                     },
                     "lore": [
-                        {"translate":"item.autofisher.skin_pack.empty.description", "color": "gray", "italic": false},
+                        {"translate":"item.autofisher.skin_pack.nether.description", "color": "gray", "italic": false},
                         {"translate":"id.autofisher.short", "color": "blue", "italic": false}
                     ]
                 }
