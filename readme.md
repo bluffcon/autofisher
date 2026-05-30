@@ -44,6 +44,12 @@ You may obtain different looks for your nets through interacting with the game i
 4. Junkie
 > Catches only trash instead of fish or treasure. Green synthetic nets look like they smell putrid. Can be obtained by having any non-Junkie net catch 30 pieces of junk without being broken once. Still consumes bait.
 
+5. Pride (Pride Month 2026!!)
+> When catching saddles, fishing rods, bows, leather boots, water bottles, or enchanted books (all unstackable items), turns them into random raw ores instead. Gold - 10%, Iron - 36%, Copper - 54% Extravagant and colorful, with a birch frame. Can be crafted in a Crafting Table from a Nautilus Shell and 8 dye around it.
+
+6. Trans (Pride Month 2026!!)
+> After catching fish, the cooldown applied on this net is reduced by 2% of max cooldown for every net (including this one) in a 3.5 block radius around it up to a 50% CD reduction. Cherry frame and magical colorful netting shifts colors from pink to blue.
+
 With more to come!
 
 

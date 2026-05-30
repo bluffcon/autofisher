@@ -6,11 +6,11 @@ team join autofisher.fishing @n[type=item,tag=autofisher.fish,distance=..2]
 function autofisher:block/net/work/make_fish
 execute if score @s autofisher.net.skin matches 4 run loot replace entity @n[type=item,distance=..2] container.0 fish gameplay/fishing/junk ~ ~ ~ fishing_rod
 execute if entity @s[tag=autofisher.block.net.dragon_breath] run function autofisher:block/net/skin/spawn_dragon_fish
-execute if score @s autofisher.net.skin matches 101 if predicate {condition:"random_chance",chance:0.1} run loot replace entity @n[type=item,distance=..1] container.0 loot blocks/birch_sapling
+execute if score @s autofisher.net.skin matches 101 if items entity @n[type=item,distance=..1] container.0 #autofisher:pride_to_ore run function autofisher:block/net/skin/pride
 execute if items entity @n[type=item,tag=autofisher.fish] container.* enchanted_book as @a if score @s arbiterlib.player = @n[distance=..2,type=item_display,tag=autofisher.block.net] autofisher.net.owner_id run advancement grant @s only autofisher:alternative_story/magic_happens
 tag @n[type=item,tag=autofisher.fish,distance=..2] remove autofisher.fish
 
-scoreboard players set @s autofisher.net.cooldown 200
+function autofisher:block/net/work/cooldown/main
 scoreboard players set @s autofisher.net.pity 0
 execute if score @s autofisher.net.skin matches 1 if predicate {condition:random_chance,chance:0.01} run summon phantom ~ ~1 ~ {Motion:[0,1,0]}
 

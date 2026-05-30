@@ -1,0 +1,95 @@
+name: Create Release on Keyword (No Commit)
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  create-release:
+    if: contains(github.event.head_commit.message, '!')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Extract version from commit message
+        id: extract
+        run: |
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          if [[ $COMMIT_MSG =~ !([a-zA-Z0-9]+) ]]; then
+            VERSION="${BASH_REMATCH[1]}"
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "Extracted version: $VERSION"
+          else
+            echo "No version found after !"
+            exit 1
+          fi
+      
+      - name: Get repository name
+        id: repo
+        run: |
+          REPO_NAME="${{ github.event.repository.name }}"
+          echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
+          echo "Repository name: $REPO_NAME"
+      
+      - name: Create modified pack.mcmeta and zip files
+        run: |
+          VERSION="${{ steps.extract.outputs.version }}"
+          REPO_NAME="${{ steps.repo.outputs.name }}"
+          
+          # Create temporary directory with all files
+          mkdir temp-build
+          cp -r . temp-build/
+          
+          # Modify pack.mcmeta in temp directory (replace XXX with version)
+          sed -i "s/XXX/$VERSION/g" temp-build/pack.mcmeta
+          
+          # Check if repository is 'arbiterlib'
+          if [ "$REPO_NAME" = "arbiterlib" ]; then
+            echo "Repository is arbiterlib - creating two zip files"
+            
+            # Create full zip (with data folder)
+            cd temp-build
+            zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
+            cd ..
+            
+            # Create zip without data folder (prefixed with 'r')
+            cd temp-build
+            zip -r "../r${REPO_NAME}_${VERSION}.zip" . -x "data/*" "*.git*"
+            cd ..
+            
+            echo "Created: ${REPO_NAME}_${VERSION}.zip"
+            echo "Created: r${REPO_NAME}_${VERSION}.zip"
+          else
+            echo "Repository is $REPO_NAME - creating single zip file"
+            
+            # Create single zip with data folder
+            cd temp-build
+            zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
+            cd ..
+            
+            echo "Created: ${REPO_NAME}_${VERSION}.zip"
+          fi
+          
+          # Clean up
+          rm -rf temp-build
+      
+      - name: List created zip files
+        run: |
+          echo "Created zip files:"
+          ls -la *.zip 2>/dev/null || echo "No zip files found"
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.extract.outputs.version }}
+          name: "Release ${{ steps.extract.outputs.version }}"
+          body: |
+            Release from commit: ${{ github.event.head_commit.message }}
+          files: |
+            *.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

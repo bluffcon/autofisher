@@ -1,0 +1,30 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "sss",
+        "sds",
+        "sss"
+    ],
+    "key": {
+        "s": "#dyes",
+        "d": "nautilus_shell"
+    },
+    "show_notification": true,
+    "result": {
+        "id": "poisonous_potato",
+        "components": {
+                    "!food": {}, "!consumable": {},
+                    "item_model": "arbiterlib:autofisher/net/pack_pride",
+                    "item_name": {"translate": "item.autofisher.skin_pack.pride"},
+                    "custom_data": {
+                        "arbiterlib": {"namespace":"autofisher","id":"skin_pack"}, "autofisher": {"skin": "101"}
+                    },
+                    "lore": [
+                        {"translate":"item.autofisher.skin_pack.pride.description", "color": "gray", "italic": false},
+                        {"translate":"id.autofisher.short", "color": "blue", "italic": false}
+                    ]
+        },
+        "count": 1
+    },
+    "category": "equipment"
+}
