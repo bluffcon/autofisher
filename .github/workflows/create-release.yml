@@ -35,31 +35,34 @@ jobs:
           echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
           echo "Repository name: $REPO_NAME"
       
-      - name: Create modified pack.mcmeta and zip files
+      - name: Create zip files with modified pack.mcmeta
         run: |
           VERSION="${{ steps.extract.outputs.version }}"
           REPO_NAME="${{ steps.repo.outputs.name }}"
           
-          # Create temporary directory with all files
-          mkdir temp-build
-          cp -r . temp-build/
+          # Create a temporary working directory
+          mkdir -p working_dir
           
-          # Modify pack.mcmeta in temp directory (replace XXX with version)
-          sed -i "s/XXX/$VERSION/g" temp-build/pack.mcmeta
+          # Copy all files to working directory
+          cp -r * working_dir/ 2>/dev/null || true
+          cp -r .[!.]* working_dir/ 2>/dev/null || true
           
-          # Check if repository is 'arbiterlib'
+          # Modify pack.mcmeta in working directory
+          sed -i "s/XXX/$VERSION/g" working_dir/pack.mcmeta
+          
+          cd working_dir
+          
+          # Create zip files from working directory
           if [ "$REPO_NAME" = "arbiterlib" ]; then
             echo "Repository is arbiterlib - creating two zip files"
             
             # Create full zip (with data folder)
-            cd temp-build
             zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
-            cd ..
             
             # Create zip without data folder (prefixed with 'r')
-            cd temp-build
-            zip -r "../r${REPO_NAME}_${VERSION}.zip" . -x "data/*" "*.git*"
-            cd ..
+            # Remove the data folder first
+            rm -rf data
+            zip -r "../r${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
             
             echo "Created: ${REPO_NAME}_${VERSION}.zip"
             echo "Created: r${REPO_NAME}_${VERSION}.zip"
@@ -67,15 +70,17 @@ jobs:
             echo "Repository is $REPO_NAME - creating single zip file"
             
             # Create single zip with data folder
-            cd temp-build
             zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
-            cd ..
             
             echo "Created: ${REPO_NAME}_${VERSION}.zip"
           fi
           
+          cd ..
+          
           # Clean up
-          rm -rf temp-build
+          rm -rf working_dir
+          
+          echo "Original files untouched, zips created successfully"
       
       - name: List created zip files
         run: |
