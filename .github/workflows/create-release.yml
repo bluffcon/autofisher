@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main, master ]
 
+env:
+  GAME_VERSION: "26.1.x"
+
 jobs:
   create-release:
     if: contains(github.event.head_commit.message, '!')
@@ -15,18 +18,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Extract version from commit message
+      - name: Extract version and full title from commit message
         id: extract
         run: |
           COMMIT_MSG="${{ github.event.head_commit.message }}"
-          if [[ $COMMIT_MSG =~ !([a-zA-Z0-9]+) ]]; then
-            VERSION="${BASH_REMATCH[1]}"
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
-            echo "Extracted version: $VERSION"
-          else
-            echo "No version found after !"
-            exit 1
+          # Remove leading/trailing spaces and the '!' prefix
+          RAW="${COMMIT_MSG#!}"
+          RAW="${RAW#"${RAW%%[![:space:]]*}"}"  # trim leading spaces
+          # First word after ! is the version
+          VERSION=$(echo "$RAW" | awk '{print $1}')
+          # Everything after the first word is the title (rest of message)
+          TITLE=$(echo "$RAW" | cut -d' ' -f2-)
+          # If no extra text, use version as title
+          if [ -z "$TITLE" ]; then
+            TITLE="$VERSION"
           fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+          echo "Release title: $TITLE"
       
       - name: Get repository name
         id: repo
@@ -47,7 +57,7 @@ jobs:
           cp -r * working_dir/ 2>/dev/null || true
           cp -r .[!.]* working_dir/ 2>/dev/null || true
           
-          # Modify pack.mcmeta in working directory
+          # Modify pack.mcmeta in working directory (replace XXX with version)
           sed -i "s/XXX/$VERSION/g" working_dir/pack.mcmeta
           
           cd working_dir
@@ -56,23 +66,23 @@ jobs:
           if [ "$REPO_NAME" = "arbiterlib" ]; then
             echo "Repository is arbiterlib - creating two zip files"
             
-            # Create full zip (with data folder)
+            # Create full zip (with data folder) - this one gets published
             zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
             
-            # Create zip without data folder (prefixed with 'r')
+            # Create zip without data folder (prefixed with 'r') - manual use only
             # Remove the data folder first
             rm -rf data
             zip -r "../r${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
             
-            echo "Created: ${REPO_NAME}_${VERSION}.zip"
-            echo "Created: r${REPO_NAME}_${VERSION}.zip"
+            echo "Created: ${REPO_NAME}_${VERSION}.zip (will be published to Modrinth)"
+            echo "Created: r${REPO_NAME}_${VERSION}.zip (manual use only)"
           else
             echo "Repository is $REPO_NAME - creating single zip file"
             
             # Create single zip with data folder
             zip -r "../${REPO_NAME}_${VERSION}.zip" . -x "*.git*"
             
-            echo "Created: ${REPO_NAME}_${VERSION}.zip"
+            echo "Created: ${REPO_NAME}_${VERSION}.zip (will be published to Modrinth)"
           fi
           
           cd ..
@@ -91,10 +101,53 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.extract.outputs.version }}
-          name: "Release ${{ steps.extract.outputs.version }}"
+          name: "${{ steps.extract.outputs.version }}${{ steps.extract.outputs.title }}"
           body: |
-            Release from commit: ${{ github.event.head_commit.message }}
+            Generated from commit by ${{ github.event.head_commit.author.name }}
+            Commit: ${{ github.event.head_commit.url }}
+            
+            To use this script, make a commit called "!VERSION - other info" like "!a3" or "!r7 - Big Changes"
           files: |
             *.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Read Modrinth project ID from pack.mcmeta
+        id: modrinth_id
+        run: |
+          # Extract project ID from pack.mcmeta JSON field .info.modrinth_project_id
+          PROJECT_ID=$(jq -r '.info.modrinth_project_id' pack.mcmeta)
+          if [ "$PROJECT_ID" = "null" ] || [ -z "$PROJECT_ID" ]; then
+            echo "No modrinth_project_id found in pack.mcmeta"
+            exit 1
+          fi
+          echo "id=$PROJECT_ID" >> $GITHUB_OUTPUT
+          echo "Modrinth Project ID: $PROJECT_ID"
+      
+      - name: Determine loader(s) and main zip file
+        id: modrinth_meta
+        run: |
+          REPO_NAME="${{ steps.repo.outputs.name }}"
+          VERSION="${{ steps.extract.outputs.version }}"
+          
+          if [ "$REPO_NAME" = "arbiterlib" ]; then
+            LOADERS='["minecraft", "datapack"]'
+            MAIN_ZIP="${REPO_NAME}_${VERSION}.zip"
+          else
+            LOADERS='["datapack"]'
+            MAIN_ZIP="${REPO_NAME}_${VERSION}.zip"
+          fi
+          
+          echo "loaders=$LOADERS" >> $GITHUB_OUTPUT
+          echo "main_zip=$MAIN_ZIP" >> $GITHUB_OUTPUT
+      
+      - name: Publish to Modrinth
+        if: success()
+        uses: cloudnode-pro/modrinth-publish@v2
+        with:
+          token: ${{ secrets.MODRINTH_TOKEN }}
+          project: ${{ steps.modrinth_id.outputs.id }}
+          version: ${{ steps.extract.outputs.version }}
+          loaders: ${{ steps.modrinth_meta.outputs.loaders }}
+          game-versions: ${{ env.GAME_VERSION }}
+          files: ${{ steps.modrinth_meta.outputs.main_zip }}
