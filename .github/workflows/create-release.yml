@@ -101,7 +101,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.extract.outputs.version }}
-          name: "${{ steps.extract.outputs.version }} ${{ steps.extract.outputs.title }}"
+          name: "${{ steps.extract.outputs.version }} - ${{ steps.extract.outputs.title }}"
           body: |
             Generated from commit by ${{ github.event.head_commit.author.name }}
             Commit: ${{ github.event.head_commit.url }}
@@ -141,6 +141,20 @@ jobs:
           echo "loaders=$LOADERS" >> $GITHUB_OUTPUT
           echo "main_zip=$MAIN_ZIP" >> $GITHUB_OUTPUT
       
+      - name: Set dependencies for non-arbiterlib repos
+        id: dependencies
+        run: |
+          REPO_NAME="${{ steps.repo.outputs.name }}"
+          
+          if [ "$REPO_NAME" != "arbiterlib" ]; then
+            DEPENDENCIES='[{"project_id": "aHzaVmyo", "dependency_type": "required"}]'
+            echo "dependencies=$DEPENDENCIES" >> $GITHUB_OUTPUT
+            echo "dependencies set for $REPO_NAME"
+          else
+            echo "dependencies=" >> $GITHUB_OUTPUT
+            echo "no dependencies for arbiterlib"
+          fi
+      
       - name: Publish to Modrinth
         if: success()
         uses: cloudnode-pro/modrinth-publish@v2
@@ -152,3 +166,4 @@ jobs:
           game-versions: ${{ env.GAME_VERSION }}
           files: ${{ steps.modrinth_meta.outputs.main_zip }}
           name: ${{ steps.extract.outputs.title }}
+          dependencies: ${{ steps.dependencies.outputs.dependencies }}
