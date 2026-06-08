@@ -44,3 +44,39 @@ if items block ~ ~ ~ container.20 #dyes \
 if items block ~ ~ ~ container.21 #dyes \
 \
 run return run function arbiterlib:craft/workbench/craft/found {namespace:"autofisher",loottable:"pride_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64}
+
+
+
+execute \
+if entity @p[advancements={autofisher:alternative_story/skystone_and_pillar=false}] \
+\
+if items block ~ ~ ~ container.1 #dyes \
+if items block ~ ~ ~ container.2 #dyes \
+if items block ~ ~ ~ container.3 #dyes \
+\
+if items block ~ ~ ~ container.10 #dyes \
+if items block ~ ~ ~ container.11 heart_of_the_sea \
+if items block ~ ~ ~ container.12 #dyes \
+\
+if items block ~ ~ ~ container.19 #dyes \
+if items block ~ ~ ~ container.20 #dyes \
+if items block ~ ~ ~ container.21 #dyes \
+\
+run return run function arbiterlib:craft/workbench/craft/found {namespace:"autofisher",loottable:"trans_net_pack_preview",rarity:"common",item:"poisonous_potato", max_stack:64}
+
+execute \
+if entity @p[advancements={autofisher:alternative_story/skystone_and_pillar=true}] \
+\
+if items block ~ ~ ~ container.1 #dyes \
+if items block ~ ~ ~ container.2 #dyes \
+if items block ~ ~ ~ container.3 #dyes \
+\
+if items block ~ ~ ~ container.10 #dyes \
+if items block ~ ~ ~ container.11 heart_of_the_sea \
+if items block ~ ~ ~ container.12 #dyes \
+\
+if items block ~ ~ ~ container.19 #dyes \
+if items block ~ ~ ~ container.20 #dyes \
+if items block ~ ~ ~ container.21 #dyes \
+\
+run return run function arbiterlib:craft/workbench/craft/found {namespace:"autofisher",loottable:"trans_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64}

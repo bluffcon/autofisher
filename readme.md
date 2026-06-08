@@ -1,7 +1,7 @@
-# Autofisher [r4]
+# Autofisher
 Adds a block that lets you catch fish while you're away! The Fishing Net automatically gets fish at random intervals and puts it into a hopper, a water stream, or on the ground below!
 
-### ⚠️ Requires ArbiterLib (`a4` and higher) **datapack** and **resources**. Get them on [Modrinth](https://modrinth.com/datapack/arbiterlib) | [GitHub](github.com/bluffcon/arbiterlib)
+### ⚠️ Requires ArbiterLib (latest) **datapack** and **resources**. Get them on [Modrinth](https://modrinth.com/datapack/arbiterlib) | [GitHub](github.com/bluffcon/arbiterlib)
 
 
 # Features
@@ -33,7 +33,7 @@ You can add bait (open menu -> seagrass) to the net. Bait will remove all junk a
 You may obtain different looks for your nets through interacting with the game in different ways. They are given as Net Pack items - special items that if you interact with the net with one of these in your hand, the net will change its looks. Navigate through the Advancements tab to find out how to get each individual net pack! Currently there are 3 net packs available.
 
 1. Default Look
-> Offers no gameplay changes. Its the default look of white strings and oak wood. Can be crafted in a Crafting Table with paper and glow ink sacs.
+> Offers no gameplay changes. Its the default look of white strings and oak wood. Can be crafted in a Workbench (ArbiterLib) with paper and glow ink sacs.
 
 2. Seagrass
 > Always consumes max (3) bait when catching fish. Regular oak wood with green seagrass netting. Can be obtained only once by getting the "Overfed the Fish" advancement.
@@ -44,11 +44,11 @@ You may obtain different looks for your nets through interacting with the game i
 4. Junkie
 > Catches only trash instead of fish or treasure. Green synthetic nets look like they smell putrid. Can be obtained by having any non-Junkie net catch 30 pieces of junk without being broken once. Still consumes bait.
 
-5. Pride (Pride Month 2026!!)
-> When catching saddles, fishing rods, bows, leather boots, water bottles, or enchanted books (all unstackable items), turns them into random raw ores instead. Gold - 10%, Iron - 36%, Copper - 54% Extravagant and colorful, with a birch frame. Can be crafted in a Crafting Table from a Nautilus Shell and 8 dye around it.
+5. Pride (Pride Month 2026!!) - Right now they're given for free!
+> When catching saddles, fishing rods, bows, leather boots, water bottles, or enchanted books (all unstackable items), turns them into random raw ores instead. Gold - 10%, Iron - 36%, Copper - 54% Extravagant and colorful, with a birch frame. Can be crafted in a Workbench (ArbiterLib) using a Nautilus Shell and 8 dye around it.
 
-6. Trans (Pride Month 2026!!)
-> After catching fish, the cooldown applied on this net is reduced by 2% of max cooldown for every net (including this one) in a 3.5 block radius around it up to a 50% CD reduction. Cherry frame and magical colorful netting shifts colors from pink to blue.
+6. Trans (Pride Month 2026!!) - Right now they're given for free!
+> After catching fish, the cooldown applied on this net is reduced by 2% of max cooldown for every net (including this one) in a 3.5 block radius around it up to a 50% CD reduction. Cherry frame and magical colorful netting shifts colors from pink to blue. Can be crafted in a Workbench (ArbiterLib) using a Heart of the Sea and 8 dye around it IF you have the 'Skystone and Pillar' advancement (obtain Galaxy skin).
 
 With more to come!
 

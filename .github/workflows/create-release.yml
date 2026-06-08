@@ -151,7 +151,7 @@ jobs:
             echo "dependencies=$DEPENDENCIES" >> $GITHUB_OUTPUT
             echo "dependencies set for $REPO_NAME"
           else
-            echo "dependencies=" >> $GITHUB_OUTPUT
+            echo "dependencies=[]" >> $GITHUB_OUTPUT
             echo "no dependencies for arbiterlib"
           fi
       

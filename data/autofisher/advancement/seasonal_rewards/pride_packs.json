@@ -1,0 +1,24 @@
+{
+    "criteria": {
+        "x": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "predicates": {
+                            "custom_data": {
+                                "arbiterlib": {
+                                    "namespace": "autofisher",
+                                    "id": "net"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "autofisher:seasonal/pride2026"
+    }
+}
