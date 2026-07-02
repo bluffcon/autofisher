@@ -12,6 +12,8 @@ scoreboard objectives add autofisher.net.junk_count dummy
 scoreboard objectives add autofisher.net.skin.102 dummy
 scoreboard objectives add autofisher.net.owner_id dummy
 
+scoreboard objectives add autofisher.customfish dummy
+
 scoreboard objectives add autofisher.settings dummy
 
 team add autofisher.fishing
@@ -19,3 +21,6 @@ team modify autofisher.fishing collisionRule pushOtherTeams
 
 execute unless score .custom_settings autofisher.settings matches 1 run function autofisher:restore_defaults
 execute store result storage autofisher:data bait_stack_size int 1 run scoreboard players get .bait_stack_size autofisher.settings
+
+
+execute unless score .data_format autofisher.settings matches 9 run tellraw @a [{text:"[Autofisher] Unfamiliar or outdated data format for Autofisher settings. Please review the changes here ", color:red}, {text:"-> GitHub <-", "click_event":{action:"open_url",url:"https://github.com/bluffcon/autofisher/blob/master/data/autofisher/function/restore_defaults.mcfunction"}, underlined:true,color:white}, {text:" and update your configs manually, or ", color:red}, {text:"restore default settings", click_event:{action:"suggest_command", command:"/function autofisher:restore_defaults"},color:white,underlined:true}]

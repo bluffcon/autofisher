@@ -1,6 +1,7 @@
+scoreboard players set .data_format autofisher.settings 9
 #######################################
 #                                     #
-#  autofisher data format version r5  #
+#  autofisher data format version r9  #
 #                                     #
 #######################################
 
@@ -17,6 +18,13 @@ scoreboard players set .custom_settings autofisher.settings 0
 scoreboard players set .enable_skins autofisher.settings 1
 
 scoreboard players set .net_cooldown autofisher.settings 200
+
+### new in r9:
+scoreboard players set .customfish.allow_settings_recommendations autofisher.settings 1
+scoreboard players set .customfish.final_chance_divider autofisher.settings 1
+scoreboard players set .customfish.final_chance_multiplier autofisher.settings 1
+scoreboard players set .customfish.max_allowed_against_vanilla_pool autofisher.settings 800
+################
 
 execute store result storage autofisher:data autofisher_bait_max int 1 run scoreboard players get .max_net_bait autofisher.settings
 data modify storage autofisher:data autofisher_bait_item set value "seagrass[]"

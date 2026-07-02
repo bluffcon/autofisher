@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "x": {
+      "conditions": {
+        "item": {
+          "items": "#fishes"
+        }
+      },
+      "trigger": "minecraft:fishing_rod_hooked"
+    }
+  },
+  "rewards": {
+    "function": "autofisher:custom_fishing/main"
+  }
+} 
