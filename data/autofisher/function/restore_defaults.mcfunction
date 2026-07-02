@@ -42,4 +42,5 @@ scoreboard players operation .2_percent_of_net_cooldown autofisher.settings *= .
 scoreboard players operation .half_of_net_cooldown autofisher.settings = .net_cooldown autofisher.settings
 scoreboard players operation .half_of_net_cooldown autofisher.settings /= .two autofisher.settings
 
-scoreboard players set .fix_old_nets_pre_r5 autofisher.settings -1
+
+

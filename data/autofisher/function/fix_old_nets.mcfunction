@@ -1,3 +1,0 @@
-execute if data entity @s item.components{"minecraft:item_model":"arbiterlib:autofisher_net_skin_0"} run data modify entity @s item.components.minecraft:item_model set value "arbiterlib:autofisher/net/skin_0"
-execute if data entity @s item.components{"minecraft:item_model":"arbiterlib:autofisher_net_skin_1"} run data modify entity @s item.components.minecraft:item_model set value "arbiterlib:autofisher/net/skin_1"
-execute if data entity @s item.components{"minecraft:item_model":"arbiterlib:autofisher_net_skin_2"} run data modify entity @s item.components.minecraft:item_model set value "arbiterlib:autofisher/net/skin_2"

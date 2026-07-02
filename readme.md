@@ -44,10 +44,10 @@ You may obtain different looks for your nets through interacting with the game i
 4. Junkie
 > Catches only trash instead of fish or treasure. Green synthetic nets look like they smell putrid. Can be obtained by having any non-Junkie net catch 30 pieces of junk without being broken once. Still consumes bait.
 
-5. Pride (Pride Month 2026!!) - Right now they're given for free!
+5. Pride (Pride Month 2026)
 > When catching saddles, fishing rods, bows, leather boots, water bottles, or enchanted books (all unstackable items), turns them into random raw ores instead. Gold - 10%, Iron - 36%, Copper - 54% Extravagant and colorful, with a birch frame. Can be crafted in a Workbench (ArbiterLib) using a Nautilus Shell and 8 dye around it.
 
-6. Trans (Pride Month 2026!!) - Right now they're given for free!
+6. Trans (Pride Month 2026)
 > After catching fish, the cooldown applied on this net is reduced by 2% of max cooldown for every net (including this one) in a 3.5 block radius around it up to a 50% CD reduction. Cherry frame and magical colorful netting shifts colors from pink to blue. Can be crafted in a Workbench (ArbiterLib) using a Heart of the Sea and 8 dye around it IF you have the 'Skystone and Pillar' advancement (obtain Galaxy skin).
 
 With more to come!
@@ -68,7 +68,7 @@ With more to come!
 
 - My configurations keep getting reset!
 
-> Enable `.custom_settings` in `autofisher.settings` scoreboard to prevent this
+> Set `.custom_settings` in `autofisher.settings` scoreboard to `1` to enable custom settings
 
 
 ## Technical
@@ -78,4 +78,4 @@ Every following try has a 0.45% chance to catch a fish. If the net has bait, the
 
 After catching a fish, makes a splashing sound and goes back on cooldown and resets pity. Consumes 1-3 bait with increasingly rarer chances to consume less. Sets the cooldown to 200 tries.
 
-**Changelog b3:** Configuration for some of these numbers has been added! You can now change the bait item, bait consumption, bait stack size, bait button item, etc.! View all possible up-to-date configurations in `autofisher:restore_defaults.mcfunction`
+**Changelog b3:** Configuration for some of these numbers has been added! You can now change the bait item, bait consumption, bait stack size, bait button item, etc.! View all possible up-to-date configurations in `data/autofisher/function/restore_defaults.mcfunction`
