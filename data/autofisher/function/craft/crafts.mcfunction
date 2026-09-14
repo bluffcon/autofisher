@@ -11,7 +11,7 @@ if items block ~ ~ ~ container.19 stick \
 if items block ~ ~ ~ container.20 string \
 if items block ~ ~ ~ container.21 stick \
 \
-run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"net",rarity:"common",item:"cod_spawn_egg",max_stack:64}
+run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"net",rarity:"common",item:"cod_spawn_egg",max_stack:64,count:1}
 
 
 execute \
@@ -27,7 +27,7 @@ if items block ~ ~ ~ container.19 paper \
 if items block ~ ~ ~ container.20 paper \
 if items block ~ ~ ~ container.21 paper \
 \
-run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"empty_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64}
+run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"empty_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64,count:1}
 
 
 
@@ -44,7 +44,7 @@ if items block ~ ~ ~ container.19 #dyes \
 if items block ~ ~ ~ container.20 #dyes \
 if items block ~ ~ ~ container.21 #dyes \
 \
-run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"pride_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64}
+run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"pride_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64,count:1}
 
 
 execute \
@@ -62,4 +62,4 @@ if items block ~ ~ ~ container.19 #dyes \
 if items block ~ ~ ~ container.20 #dyes \
 if items block ~ ~ ~ container.21 #dyes \
 \
-run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"trans_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64}
+run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"trans_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64,count:1}
