@@ -1,0 +1,31 @@
+{
+  "id": "autofisher",
+  "name": "Autofisher",
+  "description": "Catch fish automatically using a new fishing net block!",
+  "license": "MIT",
+  "authors": ["bluffcon"],
+  "homepage": "https://modrinth.com/datapack/autofisher",
+  "sources": "https://github.com/bluffcon/autofisher",
+  "issues": "https://github.com/bluffcon/autofisher/issues",
+  "icon": "pack.png",
+
+  "main_mod": false,
+
+  "library": {
+    "id": "arbiterlib",
+    "modrinth_project_id": "aHzaVmyo",
+    "min_version": 20
+  },
+
+  "modrinth": {
+    "project_id": "1tmO2x9W",
+    "game_versions": ["26.1.2"],
+    "channel": "release",
+    "environment": "server_only_client_optional"
+  },
+
+  "resource_pack": {
+    "present": false,
+    "required": false
+  }
+}

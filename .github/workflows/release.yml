@@ -1,0 +1,31 @@
+# uploads to modrinth when commit with ! prefix
+
+name: Release on !version commit
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      version_override:
+        description: "Version (e.g. r7) if the latest commit is not !r7 ..."
+        required: false
+        default: ""
+      release_title:
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.head_commit.message, '!')
+    uses: bluffcon/datapack-mod-template/.github/workflows/release.yml@main
+    secrets:
+      MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+    with:
+      version_override: ${{ inputs.version_override || '' }}
+      release_title: ${{ inputs.release_title || '' }}
