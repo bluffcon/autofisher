@@ -1,4 +1,4 @@
-$item modify entity @n[type=item,distance=..1] container.0 {function: "set_components", components:{entity_data: \
+$item modify entity @n[type=item,distance=..1] container.0 {type: "set_components", components:{entity_data: \
 \
                         {"id": "item_display", \
                             "Tags": ["arbiterlib.block","arbiterlib.block.adjustable_light"], \
@@ -21,7 +21,7 @@ $item modify entity @n[type=item,distance=..1] container.0 {function: "set_compo
                         "glow_color_override": 1 \
 }, item_model:"arbiterlib:autofisher/net/skin_$(autofisher_skin_number)"}}
 
-$execute if score .enable_skins autofisher.settings matches 1 run return run item modify entity @n[type=item,distance=..1] container.0 {function:"set_lore",lore:[[{translate:"ui.autofisher.bait_colon",color:gray,italic:false},{text:"$(autofisher_bait_score)",color:gold,italic:false},{text:"/",color:gray,italic:false},{text:"$(autofisher_bait_max)",color:white,italic:false}, {"text":" | ", color:"#57575c"}, {translate:"ui.autofisher.skin.$(autofisher_skin_number)",color:white}]],mode:"insert"}
+$execute if score .enable_skins autofisher.settings matches 1 run return run item modify entity @n[type=item,distance=..1] container.0 {type:"set_lore",lore:[[{translate:"ui.autofisher.bait_colon",color:gray,italic:false},{text:"$(autofisher_bait_score)",color:gold,italic:false},{text:"/",color:gray,italic:false},{text:"$(autofisher_bait_max)",color:white,italic:false}, {"text":" | ", color:"#57575c"}, {translate:"ui.autofisher.skin.$(autofisher_skin_number)",color:white}]],mode:"insert"}
 
-$item modify entity @n[type=item,distance=..1] container.0 {function:"set_lore",lore:[[{translate:"ui.autofisher.bait_colon",color:gray,italic:false},{text:"$(autofisher_bait_score)",color:gold,italic:false},{text:"/",color:gray,italic:false},{text:"$(autofisher_bait_max)",color:white,italic:false}]],mode:"insert"}
+$item modify entity @n[type=item,distance=..1] container.0 {type:"set_lore",lore:[[{translate:"ui.autofisher.bait_colon",color:gray,italic:false},{text:"$(autofisher_bait_score)",color:gold,italic:false},{text:"/",color:gray,italic:false},{text:"$(autofisher_bait_max)",color:white,italic:false}]],mode:"insert"}
 

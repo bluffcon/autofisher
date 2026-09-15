@@ -99,7 +99,7 @@ To add your function to the pool, make a function tagged with `#autofisher:poll_
 
 ```lua
 scoreboard players add .chance_out_of_1000 autofisher.customfish 100
-data modify storage autofisher:custom_fishing entries append value {function:"datapack:custom_fishing/my_fishing_function", reroll_chance:0.9}
+data modify storage autofisher:custom_fishing entries append value {type:"datapack:custom_fishing/my_fishing_function", reroll_chance:0.9}
 ```
 
 You should only use this **once per datapack!** Handle all further random and loot distribution inside your very function!
@@ -111,7 +111,7 @@ There are two values that might need explanation! Both of them determine random 
 
 \**If you're planning on overriding all vanilla fishing, check if `.customfish.allow_settings_recommendations` is 1 and override the `.customfish.max_allowed_against_vanilla_pool` setting to 1000!*
 
-**Entry Object.** `{function:"datapack:custom_fishing/my_fishing_function", reroll_chance:0.9}` - `function` should point to your main function for handling rest of the custom fishing. `reroll_chance` is interesting: it sets the chance for your entry getting rerolled if it gets chosen. This is to allow other datapacks that might add more content to get more loot pool. Set it to `0.8` or `0.9` if you're only adding a few items, set it to `0` if you're adding a lot!
+**Entry Object.** `{type:"datapack:custom_fishing/my_fishing_function", reroll_chance:0.9}` - `function` should point to your main function for handling rest of the custom fishing. `reroll_chance` is interesting: it sets the chance for your entry getting rerolled if it gets chosen. This is to allow other datapacks that might add more content to get more loot pool. Set it to `0.8` or `0.9` if you're only adding a few items, set it to `0` if you're adding a lot!
 
 ### 3. Handling the rest
 In the function, the current position (`~ ~ ~`) is the player (or net) fishing, and `@s` is the fish item. This way you can easily switch targets based on what you need. Please don't put anything extra in the polling function!

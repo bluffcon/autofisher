@@ -16,9 +16,9 @@ tag @n[type=item,tag=autofisher.fish,distance=..2] remove autofisher.fish
 
 function autofisher:block/net/work/cooldown/main
 scoreboard players set @s autofisher.net.pity 0
-execute if score @s autofisher.net.skin matches 1 if predicate {condition:random_chance,chance:0.01} run summon phantom ~ ~1 ~ {Motion:[0,1,0]}
+execute if score @s autofisher.net.skin matches 1 if predicate {type:random_chance,chance:0.01} run summon phantom ~ ~1 ~ {Motion:[0,1,0]}
 
 execute if score @s autofisher.net.bait matches 3.. if score @s autofisher.net.skin matches 2 run return run scoreboard players remove @s autofisher.net.bait 3
-execute if score @s autofisher.net.bait matches 3.. if predicate {condition:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 3
-execute if score @s autofisher.net.bait matches 3.. if predicate {condition:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 2
+execute if score @s autofisher.net.bait matches 3.. if predicate {type:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 3
+execute if score @s autofisher.net.bait matches 3.. if predicate {type:random_chance,chance:0.5} run return run scoreboard players remove @s autofisher.net.bait 2
 execute if score @s autofisher.net.bait matches 3.. run scoreboard players remove @s autofisher.net.bait 1

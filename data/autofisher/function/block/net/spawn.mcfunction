@@ -27,10 +27,10 @@ execute if score .enable_skins autofisher.settings matches 1 run function autofi
 scoreboard players operation @s autofisher.net.owner_id = @p arbiterlib.player
 
 
-execute if predicate {condition:random_chance,chance:0.2} run return run data modify entity @s transformation.right_rotation set value [0,0.707,0,-0.707]
-execute if predicate {condition:random_chance,chance:0.2} run return run data modify entity @s transformation.left_rotation set value [0.707,0,0.707,0]
-execute if predicate {condition:random_chance,chance:0.2} run return run data modify entity @s transformation.right_rotation set value [-0.707,0,-0.707,0]
-execute if predicate {condition:random_chance,chance:0.2} run return run data modify entity @s transformation.left_rotation set value [0,0.707,0,0.707]
+execute if predicate {type:random_chance,chance:0.2} run return run data modify entity @s transformation.right_rotation set value [0,0.707,0,-0.707]
+execute if predicate {type:random_chance,chance:0.2} run return run data modify entity @s transformation.left_rotation set value [0.707,0,0.707,0]
+execute if predicate {type:random_chance,chance:0.2} run return run data modify entity @s transformation.right_rotation set value [-0.707,0,-0.707,0]
+execute if predicate {type:random_chance,chance:0.2} run return run data modify entity @s transformation.left_rotation set value [0,0.707,0,0.707]
 
 data modify entity @s transformation.left_rotation set value [0,0.707,0,0.707]
 data modify entity @s transformation.right_rotation set value [0,0.707,0,0.707]
