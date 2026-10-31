@@ -63,3 +63,19 @@ if items block ~ ~ ~ container.20 #dyes \
 if items block ~ ~ ~ container.21 #dyes \
 \
 run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"trans_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64,count:1}
+
+
+execute \
+if items block ~ ~ ~ container.1 jack_o_lantern \
+if items block ~ ~ ~ container.2 jack_o_lantern \
+if items block ~ ~ ~ container.3 jack_o_lantern \
+\
+if items block ~ ~ ~ container.10 jack_o_lantern \
+if items block ~ ~ ~ container.11 *[custom_data~{arbiterlib:{id:"skin_pack"}}] \
+if items block ~ ~ ~ container.12 jack_o_lantern \
+\
+if items block ~ ~ ~ container.19 jack_o_lantern \
+if items block ~ ~ ~ container.20 jack_o_lantern \
+if items block ~ ~ ~ container.21 jack_o_lantern \
+\
+run return run function arbiterlib:craft/workbench/craft/button/make {namespace:"autofisher",loottable:"scary_net_pack",rarity:"common",item:"poisonous_potato", max_stack:64,count:1}

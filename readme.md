@@ -55,6 +55,8 @@ You may obtain different looks for your nets through interacting with the game i
 6. Trans (Pride Month 2026)
 > After catching fish, the cooldown applied on this net is reduced by 2% of max cooldown for every net (including this one) in a 3.5 block radius around it up to a 50% CD reduction. Cherry frame and magical colorful netting shifts colors from pink to blue. Can be crafted in a Workbench (ArbiterLib) using a Heart of the Sea and 8 dye around it IF you have the 'Skystone and Pillar' advancement (obtain Galaxy skin).
 
+7. Scary (Halloween 2026)
+
 With more to come!
 
 
